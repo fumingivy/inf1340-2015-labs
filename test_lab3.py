@@ -24,6 +24,13 @@ def test_months_with_31():
 # Write a test function for the months with 30 days
 
 
+def test_months_with_30():
+    """
+    test months with 30 days
+    """
+    for item in MONTHS_WITH_30:
+        assert days_in_month(item) == 30
+
 # Write a test function for the months with 28 or 29 days
 
 
@@ -34,3 +41,12 @@ def test_months_with_31():
 # Hint: use a try/except block to deal with the exception
 # Hint: use data types other than strings as input
 
+    try:
+        days_in_month("ychdjs")
+    except ValueError:
+        assert True
+
+    try:
+        days_in_month(6)
+    except AttributeError:
+        assert True
