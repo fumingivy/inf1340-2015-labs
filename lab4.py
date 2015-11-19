@@ -21,8 +21,17 @@ __license__ = "MIT License"
 
 def bill_of_sale(purchase):
 
-    print ("Amount of purchase: {0:.2f}".format(purchase))
-    print ("Provincial tax: {0:.2f}".format(purchase * .05))
-    print ("Federal tax: {0:.2f}".format(purchase * .025))
-    print ("Total tax: {0:.2f}".format(purchase * .075))
-    print ("Total sale: {0:.2f}".format(purchase * 1.075))
+    PROVINCE_SALES_TAX = 0.05
+    FEDERAL_SALES_TAX = 0.025
+    TOTAL_TAX_RATE = PROVINCE_SALES_TAX + FEDERAL_SALES_TAX
+    TOTAL_SALE_MULTIPLIER = 1 + TOTAL_TAX_RATE
+
+    with open("results.txt", "w") as file_results:
+        file_results.write("Amount of purchase: {0:.2f}\n".format(purchase))
+        file_results.write("Provincial tax: {0:.2f}\n".format(purchase * PROVINCE_SALES_TAX))
+        file_results.write("Federal tax: {0:.2f}\n".format(purchase * FEDERAL_SALES_TAX))
+        file_results.write("Total tax: {0:.2f}\n".format(purchase * TOTAL_TAX_RATE))
+        file_results.write("Total sale: {0:.2f}\n".format(purchase * TOTAL_SALE_MULTIPLIER))
+
+bill_of_sale(100)
+
