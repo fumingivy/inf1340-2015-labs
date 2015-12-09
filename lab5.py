@@ -2,9 +2,7 @@
 
 """ GUI for Name that Shape """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = 'Ming Fu'
 __license__ = "MIT License"
 
 from name_that_shape import *
